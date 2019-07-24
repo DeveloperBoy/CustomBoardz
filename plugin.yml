@@ -8,13 +8,6 @@ main: me.scoreboard.Main
 depend: [Vault]
 
 commands:
-   reloadscoreboard:
-      description: Reload all the config files
-      aliases: [reloadsc, rlscoreboard, rlsc]
-   helpscoreboard:
-      description: Help command
-      aliases: [helpsc, hscoreboard, csshelp]
-   staff:
-      description: Staff command(s)
-      aliases: [staff, staffscoreboard, staffsc, cssstaf]
-      
+   customboardz:
+      description: The main command of the plugin!
+      aliases: [cz, customb, cboardz, cboard]

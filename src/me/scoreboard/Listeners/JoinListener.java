@@ -9,7 +9,6 @@ import me.scoreboard.Managers.SBManager;
 
 public class JoinListener implements Listener {
 
-
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();

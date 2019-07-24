@@ -9,6 +9,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
 import me.scoreboard.Main;
+import me.scoreboard.Utils.MainUtil;
 
 public class SBManager {
 
@@ -21,29 +22,26 @@ public class SBManager {
         Score blanket = obj.getScore(" " + Main.getInstance().getConfig().getString("ScoreBoard.Blanket"));
         Score lolz = obj.getScore(" " + Main.getInstance().getConfig().getString("ScoreBoard.Lolz"));
 
-        String rang = Main.getInstance().getPermission().getPrimaryGroup(p);
-
-
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replace("&", "Â§").replace("%arrowright%", "Â»").replace("&", "Â§").replace("%arrowright%", "Â»").replace("&", "Â§").replace("%arrowright%", "Â»"));
+        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replace("&", "§").replace("%arrowright%", "»").replace("&", "§").replace("%arrowright%", "»").replace("&", "§").replace("%arrowright%", "»"));
 
         blanket.setScore(16);
 
-        Score naam = obj.getScore("Naam: " + Main.getInstance().getConfig().getString("ScoreBoard.Player").replace("&", "Â§").replace("%arrowright%", "Â»").replaceAll("%player%", p.getDisplayName()));
+        Score naam = obj.getScore("Naam: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Player").replaceAll("&", "§"), p));
         naam.setScore(15);
 
-        Score rank = obj.getScore("Rank: " + Main.getInstance().getConfig().getString("ScoreBoard.Rank").replace("&", "Â§").replace("%arrowright%", "Â»").replaceAll("%Rank%", rang));
+        Score rank = obj.getScore("Rank: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Rank").replaceAll("&", "§"), p));
         rank.setScore(14);
 
-        Score gamemode = obj.getScore("Server: " + Main.getInstance().getConfig().getString("ScoreBoard.World").replace("&", "Â§").replace("%arrowright%", "Â»"));
-        gamemode.setScore(13);
+        Score world = obj.getScore("Wereld: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.World").replaceAll("&", "§"), p.getWorld()));
+        world.setScore(13);
 
-        Score website = obj.getScore("Website: " + Main.getInstance().getConfig().getString("ScoreBoard.Website").replace("&", "Â§").replace("%arrowright%", "Â»"));
+        Score website = obj.getScore("Website: " + Main.getInstance().getConfig().getString("ScoreBoard.Website").replace("&", "§"));
         website.setScore(12);
 
         lolz.setScore(11);
 
-        Score ipz = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "Â§"));
+        Score ipz = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "§"));
         ipz.setScore(10);
 
         p.setScoreboard(sbs);
@@ -60,29 +58,26 @@ public class SBManager {
         Score haha = obj.getScore(" " + Main.getInstance().getConfig().getString("ScoreBoard.Lolz"));
 
 
-        String rang = Main.getInstance().getPermission().getPrimaryGroup(p);
-
-
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replace("&", "Â§").replace("%arrowright%", "Â»").replace("&", "Â§").replace("%arrowright%", "Â»").replace("&", "Â§").replace("%arrowright%", "Â»"));
+        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replaceAll("&", "§"));
 
         blanket.setScore(16);
 
-        Score naam = obj.getScore("Naam: " + Main.getInstance().getConfig().getString("ScoreBoard.Player").replace("&", "Â§").replace("%arrowright%", "Â»").replaceAll("%player%", p.getDisplayName()));
+        Score naam = obj.getScore("Naam: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Player").replaceAll("&", "§"), p));
         naam.setScore(15);
 
-        Score rank = obj.getScore("Rank: " + Main.getInstance().getConfig().getString("ScoreBoard.Rank").replace("&", "Â§").replace("%arrowright%", "Â»").replaceAll("%Rank%", rang));
+        Score rank = obj.getScore("Rank: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Rank").replaceAll("&", "§"), p));
         rank.setScore(14);
 
-        Score world = obj.getScore("Server: " + Main.getInstance().getConfig().getString("ScoreBoard.World").replace("&", "Â§").replace("%arrowright%", "Â»"));
+        Score world = obj.getScore("Wereld: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.World").replaceAll("&", "§"), p.getWorld()));
         world.setScore(13);
 
-        Score server = obj.getScore("Gamemode: " + Main.getInstance().getConfig().getString("ScoreBoard.Gamemode").replace("&", "Â§").replace("%arrowright%", "Â»").replaceAll("%gamemode%", p.getGameMode().toString()));
+        Score server = obj.getScore("Gamemode: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Gamemode").replace("&", "§"), p.getGameMode()));
         server.setScore(12);
 
         haha.setScore(11);
 
-        Score ip = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "Â§"));
+        Score ip = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "§"));
         ip.setScore(10);
 
         p.setScoreboard(sbs);

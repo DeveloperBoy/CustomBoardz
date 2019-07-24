@@ -12,12 +12,12 @@ public class HelpScoreboardCommand implements CommandExecutor {
 		Player p = (Player) sender;
 		
 		if(cmd.getName().equalsIgnoreCase("helpscoreboard")) {
-			p.sendMessage("Â§f[Â§c!!Â§f] Â§cÂ§lThis is the help command!");
+			p.sendMessage("§f[§c!!§f] §c§lThis is the help command!");
 			p.sendMessage("");
-			p.sendMessage("Â§9Reload Command: reloadsc, rlscoreboard, rlsc (Reload's the plugin!)");
+			p.sendMessage("§9Reload Command: reloadsc, rlscoreboard, rlsc (Reload's the plugin!)");
 			p.sendMessage("");
 			p.sendMessage("reloadsc, rlscoreboard, rlsc (Reload's the plugin!)");
-			p.sendMessage("Â§9Help Command: ");
+			p.sendMessage("§9Help Command: ");
 			p.sendMessage("");
 			p.sendMessage("helpsc, hscoreboard, csshelp (Get help about the plugin!)");
 		}

@@ -16,7 +16,7 @@ public class StaffScoreboardCommand implements CommandExecutor {
 		if(cmd.getName().equalsIgnoreCase("staff")) {
 				 if (p.hasPermission("cs.viewstaff")) {
 					 if (args.length != 1) {
-						 p.sendMessage("Â§fÂ§l[Â§cÂ§l!!Â§fÂ§l] Â§rÂ§cYou need to use /viewsc Â§aon Â§c| Â§4off");
+						 p.sendMessage("§f§l[§c§l!!§f§l] §r§cYou need to use /viewsc §aon §c| §4off");
 						 return false;
 					 } 
 					 //LIJST WORDT GECHECKT IN DE MAIN CLASS DOOR DIE UPDATE METHODE!
@@ -24,20 +24,20 @@ public class StaffScoreboardCommand implements CommandExecutor {
 						 //ON
 						 //Voeg hem toe aan de lijst
 						 Main.staffspelers.add(p.getUniqueId());
-						 p.sendMessage("Â§fÂ§l[Â§c!!Â§f] Â§rÂ§cYou have turned Â§aon Â§cthe staff scoreboard!");
+						 p.sendMessage("§f§l[§c!!§f] §r§cYou have turned §aon §cthe staff scoreboard!");
 					 } else {
 						 //OFF
 						 //Checkt of de speler wel in de lijst staat, anders dan krijg je errors
 						 if (Main.staffspelers.contains(p.getUniqueId())) {
 							 //Haal hem uit de lijst
 							 Main.staffspelers.remove(p.getUniqueId());
-							 p.sendMessage("Â§fÂ§l[Â§c!!Â§f] Â§rÂ§cÂ§You have turned Â§4off Â§cthe staff scoreboard!");
+							 p.sendMessage("§f§l[§c!!§f] §r§c§You have turned §4off §cthe staff scoreboard!");
 						 }
 						 
 					 }
 					 return true;
 				 } else {
-					 p.sendMessage("Â§fÂ§l[Â§c!!Â§f] Â§rÂ§cYou do not have permission to execute this command!");
+					 p.sendMessage("§f§l[§c!!§f] §r§cYou do not have permission to execute this command!");
 					 return true;
 				 }
 		}

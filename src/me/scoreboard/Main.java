@@ -8,11 +8,11 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.scoreboard.api.SBManager;
-import me.scoreboard.commands.HelpScoreboardCommand;
-import me.scoreboard.commands.ReloadScoreboardCommand;
-import me.scoreboard.commands.StaffScoreboardCommand;
-import me.scoreboard.listener.JoinListener;
+import me.scoreboard.Commands.HelpScoreboardCommand;
+import me.scoreboard.Commands.ReloadScoreboardCommand;
+import me.scoreboard.Commands.StaffScoreboardCommand;
+import me.scoreboard.Listeners.JoinListener;
+import me.scoreboard.Managers.SBManager;
 import net.milkbowl.vault.permission.Permission;
 
 public class Main extends JavaPlugin {
@@ -71,7 +71,6 @@ public class Main extends JavaPlugin {
 
     public void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
-        // Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
     }
 
     public static void Error(String message) {

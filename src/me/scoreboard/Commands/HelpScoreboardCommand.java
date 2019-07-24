@@ -1,4 +1,4 @@
-package me.scoreboard.commands;
+package me.scoreboard.Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

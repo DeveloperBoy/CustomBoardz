@@ -1,16 +1,13 @@
 name: CustomStatsScoreBoard
-author: SBDDeveloper, SmikkelBeertjes
+version: 1.1
+description: A cool scoreboard plugin for you!
+author: SmikkelBeertjes
+authors: [SBDeveloper]
+
 main: me.scoreboard.Main
-version: 1.0
 depend: [Vault]
+
 commands:
-   reloadscoreboard:
-      description: Reload all the config files
-      aliases: [reloadsc, rlscoreboard, rlsc]
-   helpscoreboard:
-      description: Help command
-      aliases: [helpsc, hscoreboard, csshelp]
-   staff:
-      description: Staff command(s)
-      aliases: [staff, staffscoreboard, staffsc, cssstaf]
-      
+   customboardz:
+      description: The main command of the plugin!
+      aliases: [cz, customb, cboardz, cboard]

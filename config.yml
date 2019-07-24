@@ -17,7 +17,7 @@ ScoreBoard:
   World: '&7Lobby'
   Ip: '&aplay.kikkercraft.nl'
   Lolz: '  '
-  Rank: "&7%Rank%"
+  Rank: "&7%rank%"
   Website: '&7www.kikkercraft.nl'
   Blanket: ' '
 # ------------------------------------------- #

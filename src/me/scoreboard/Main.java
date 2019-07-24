@@ -8,11 +8,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import me.scoreboard.api.SBManager;
-import me.scoreboard.commands.HelpScoreboardCommand;
-import me.scoreboard.commands.ReloadScoreboardCommand;
-import me.scoreboard.commands.StaffScoreboardCommand;
-import me.scoreboard.listener.JoinListener;
+import me.scoreboard.Commands.CustomBoardzCommands;
+import me.scoreboard.Listeners.JoinListener;
+import me.scoreboard.Managers.SBManager;
 import net.milkbowl.vault.permission.Permission;
 
 public class Main extends JavaPlugin {
@@ -30,7 +28,7 @@ public class Main extends JavaPlugin {
         registerEvents();
         
         if (!setupPermissions()) {
-        	Bukkit.getLogger().severe("[StarSurvivalSB] Vault is niet gevonden! Installeer Vault om deze plugin te gebruiken.");
+        	Bukkit.getLogger().severe("[CustomBoardz] Vault is niet gevonden! Installeer Vault om deze plugin te gebruiken.");
         	getServer().getPluginManager().disablePlugin(this);
         	return;
         }
@@ -64,18 +62,15 @@ public class Main extends JavaPlugin {
     }
 
     public void registerCommands() {
-        getCommand("reloadscoreboard").setExecutor(new ReloadScoreboardCommand());
-        getCommand("helpscoreboard").setExecutor(new HelpScoreboardCommand());
-        getCommand("staff").setExecutor(new StaffScoreboardCommand());
+        getCommand("custumboardz").setExecutor(new CustomBoardzCommands());
     }
 
     public void registerEvents() {
         Bukkit.getPluginManager().registerEvents(new JoinListener(), this);
-        // Bukkit.getPluginManager().registerEvents(new QuitListener(), this);
     }
 
     public static void Error(String message) {
-        Bukkit.getServer().getLogger().info("[CustomScoreboard][Error] " + message);
+        Bukkit.getServer().getLogger().info("[CustomBoardz] A error occured: " + message);
     }
     
     private boolean setupPermissions() {

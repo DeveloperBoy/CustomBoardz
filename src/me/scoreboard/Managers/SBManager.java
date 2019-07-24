@@ -23,7 +23,7 @@ public class SBManager {
         Score lolz = obj.getScore(" " + Main.getInstance().getConfig().getString("ScoreBoard.Lolz"));
 
         obj.setDisplaySlot(DisplaySlot.SIDEBAR);
-        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replace("&", "§").replace("%arrowright%", "»").replace("&", "§").replace("%arrowright%", "»").replace("&", "§").replace("%arrowright%", "»"));
+        obj.setDisplayName(Main.getInstance().getConfig().getString("ScoreBoard.Name").replaceAll("&", "§"));
 
         blanket.setScore(16);
 
@@ -36,12 +36,12 @@ public class SBManager {
         Score world = obj.getScore("Wereld: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.World").replaceAll("&", "§"), p.getWorld()));
         world.setScore(13);
 
-        Score website = obj.getScore("Website: " + Main.getInstance().getConfig().getString("ScoreBoard.Website").replace("&", "§"));
+        Score website = obj.getScore("Website: " + Main.getInstance().getConfig().getString("ScoreBoard.Website").replaceAll("&", "§"));
         website.setScore(12);
 
         lolz.setScore(11);
 
-        Score ipz = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "§"));
+        Score ipz = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replaceAll("&", "§"));
         ipz.setScore(10);
 
         p.setScoreboard(sbs);
@@ -72,12 +72,12 @@ public class SBManager {
         Score world = obj.getScore("Wereld: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.World").replaceAll("&", "§"), p.getWorld()));
         world.setScore(13);
 
-        Score server = obj.getScore("Gamemode: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Gamemode").replace("&", "§"), p.getGameMode()));
+        Score server = obj.getScore("Gamemode: " + MainUtil.replacePlaceholders(Main.getInstance().getConfig().getString("ScoreBoard.Gamemode").replaceAll("&", "§"), p.getGameMode()));
         server.setScore(12);
 
         haha.setScore(11);
 
-        Score ip = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replace("&", "§"));
+        Score ip = obj.getScore("    " + Main.getInstance().getConfig().getString("ScoreBoard.Ip").replaceAll("&", "§"));
         ip.setScore(10);
 
         p.setScoreboard(sbs);
